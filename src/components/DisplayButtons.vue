@@ -1,6 +1,6 @@
 <template>
   <section>
-    <h1>Buttons</h1>
+    <h3>Buttons</h3>
     <div class="buttons">
       <Button>Default</Button>
       <Button type="primary">Primary</Button>

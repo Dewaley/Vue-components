@@ -30,20 +30,44 @@ const close = () => {
   alertDialog.dialog = false;
   alertDialog.buttonContent = "";
 };
+const action = () => {
+  alert("Hiii");
+  close();
+};
 </script>
 
 <template>
-  <div>
-    <Button type="primary" @clicked="toggleAlert1"> Open Alert </Button>
-    <Button type="primary" @clicked="toggleAlert2"> Open Alert Dialog </Button>
-    <AlertDialog
-      :state="alertDialog.state"
-      :message="alertDialog.message"
-      :header="alertDialog.header"
-      :dialog="alertDialog.dialog"
-      :buttonContent="alertDialog.buttonContent"
-      @action="action"
-      @close="close"
-    />
-  </div>
+  <section>
+    <h3>Alert Dialog</h3>
+    <div class="alert-container">
+      <Button type="primary" @clicked="toggleAlert1"> Open Alert </Button>
+      <Button type="primary" @clicked="toggleAlert2">
+        Open Alert Dialog
+      </Button>
+      <AlertDialog
+        :state="alertDialog.state"
+        :message="alertDialog.message"
+        :header="alertDialog.header"
+        :dialog="alertDialog.dialog"
+        :buttonContent="alertDialog.buttonContent"
+        @action="action"
+        @close="close"
+      />
+    </div>
+  </section>
 </template>
+
+<style scoped>
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+.alert-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+</style>
